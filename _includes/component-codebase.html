@@ -1,0 +1,18 @@
+<div class="c-codebase">
+    <h1 class="c-codebase__title">{{ site.title | default: site.github.repository_name }}</h1>
+    <p class="c-codebase__desc">{{ site.description | default: site.github.project_tagline }}</p>
+    <ul class="c-codebase__list">
+    {% if site.github.is_project_page %}
+        <li class="c-codebase__item"><a class="c-codebase__link" href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ github_name }}</small></a></li>
+        <li class="c-codebase__item"><a class="c-codebase__link" href="{{ site.github.owner_url }}">This project is maintained by <small>{{ site.github.owner_name }}</small></a></li>
+    {% endif %}
+    {% if site.github.is_user_page %}
+        <li class="c-codebase__item"><a class="c-codebase__link" href="{{ site.github.owner_url }}">View My GitHub Profile</a></li>
+    {% endif %}
+    {% if site.show_downloads %}
+        <li class="c-codebase__item"><a class="c-codebase__link" href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
+        <li class="c-codebase__item"><a class="c-codebase__link" href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
+        <li class="c-codebase__item"><a class="c-codebase__link" href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
+    {% endif %}
+    </ul>
+</div>

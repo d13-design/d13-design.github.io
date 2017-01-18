@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+{% include doc-head.html %}
+<body>
+{% include page-header.html %}
+<div class="t-content">
+    {{ content }}
+</div>
+{% include page-footer.html %}
+
+{% if page.custom_js %}
+{% for js_file in page.custom_js %}
+<script src="{{ '/assets/js/' | relative_url }}{{ js_file }}{{ '?v=' | append: site.github.build_revision }}"></script>
+{% endfor %}
+{% else %}
+<script src="{{ '/assets/js/site.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+{% endif %}
+
+{% include script-google-analytics.html %}
+</body>
+</html>
